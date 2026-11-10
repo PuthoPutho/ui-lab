@@ -33,9 +33,10 @@ Note: the table below is filled from the first automated headless run (Robot run
 - node --version, npm --version and npx cypress version: v22.19.0, 11.17.0, Cypress 16.2.1
 - Step 4.3, failure message for the wrong title: `Timed out retrying after 10000ms` with `-'Web form'` (actual) and `+'Web Form'` (expected)
 - Step 4.6, tool and calories in the answer of POST /api/pizza: not read from the API response directly. The spec asserts that the page shows the same tool and calories as the response. Run 2 page showed Tool: Scissors, Calories per slice: 500.
-- Step 4.7, the line of the admin list that shows your pizza: `Lab Pizza 20261110-221605 (tool=Scissors, ingredients_number=6) (newest)`
+- Step 4.7, the line of the admin list that shows your pizza (run 3, saved in the screenshot): `Lab Pizza 20261110-221823 (tool=Scissors, ingredients_number=8)` (another user's pizza was above it)
 - Step 4.8, run 1, result, duration and pizza name: all specs passed, 00:26 (pizza-scenario 00:18, web-form 00:07), `Lab Pizza 20261110-221448` (tool=Pizza cutter)
 - Step 4.8, run 2, result, duration and pizza name: all specs passed, 00:25 (pizza-scenario 00:20, web-form 00:04), `Lab Pizza 20261110-221605` (tool=Scissors)
+- Step 4.8, run 3 (its screenshots and videos are the ones committed, because a later temporary spec made Cypress remove the files of run 2): all specs passed, 00:19 (pizza-scenario 00:15, web-form 00:04), `Lab Pizza 20261110-221823` (tool=Scissors)
 - Step 4.9 (optional), browser and result: not done
 
 ## Part B
