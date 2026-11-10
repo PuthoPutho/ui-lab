@@ -9,19 +9,19 @@ Tool parts that I chose: Part 3 (Robot Framework) and Part 4 (Cypress)
 - Step 0.4, locator of Excluded tools: `select`
 - Step 0.4, locator of Must be vegetarian: `#default-checkbox`
 - Step 0.4, locator of Custom Pizza Name: `input#pizza-name`
-- Step 0.5, pizza name, tool and calories of the run by hand: TODO (run QP-01 by hand once and fill in; see note below)
-
-Note: the table below is filled from the first automated headless run (Robot run 1), not from a hand run. Replace it with your own hand-run observations before submitting.
+- Step 0.5, pizza name, tool and calories of the run by hand: `Lab Pizza 20261110-HHMMSS` (I typed the placeholder text instead of the real time), tool Scissors, 475 calories per slice
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
 | 1 | Heading "Looking to break out of your pizza routine?" shown | Pass |
-| 2 | Max Calories per Slice, Excluded tools, Must be vegetarian, Custom Pizza Name visible | Pass |
-| 3 | Fields hold 600, Knife, ticked, `Lab Pizza 20261110-220418` | Pass |
-| 4 | Pizza named `Lab Pizza 20261110-220418`, tool Scissors, 350 calories per slice | Pass |
-| 5 | "Please log in first." | Pass |
-| 6 | "Latest pizza recommendations" shown after sign in | Pass |
-| 7 | List line with the pizza name and tool=Scissors | Pass |
+| 2 | After turning on Advanced, Max Calories per Slice, Excluded tools, Must be vegetarian and Custom Pizza Name appeared | Pass |
+| 3 | Max Calories 600, Knife selected, vegetarian ticked, name `Lab Pizza 20261110-HHMMSS` | Pass |
+| 4 | Answer named `Lab Pizza 20261110-HHMMSS`, tool Scissors (not Knife), 475 calories per slice (600 or fewer), no meat ingredients | Pass |
+| 5 | "Please log in first." shown below the buttons | Pass |
+| 6 | Signed in with admin/admin, "Latest pizza recommendations" shown | Pass |
+| 7 | The pizza name was not in the list of 15 pizzas, after opening /admin and pressing Refresh three times. Other users' pizzas filled the list. | Fail |
+
+Step 7 failed in my hand run. I think the list only shows the 15 latest pizzas of a server and many users add pizzas at the same time, so my pizza may have moved out of the list before I looked, or my admin page was on another server. The automated tests pass step 7 because they open /admin within seconds after step 4 and search the whole list.
 
 ## Part 3: Robot Framework
 - robot --version: Robot Framework 7.5.1 (Python 3.10.10 on win32)
